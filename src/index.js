@@ -45,6 +45,7 @@ class Index extends Component {
     render () {
         return (
             <div>
+                <App />
                 <Header />
                 <Main />
                 <Footer />
