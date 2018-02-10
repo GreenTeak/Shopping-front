@@ -2,6 +2,7 @@ import React,{Component}from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import AddtoShoppingCart from './AddtoShoppingCart.js'
+import ShoppingIcon from './ShoppingIcon.js'
 const items=[
     {
         barcode: 'ITEM000000',
@@ -35,7 +36,7 @@ const items=[
     },
     {
         barcode: 'ITEM000005',
-        name: '方便⾯',
+        name: '方便面',
         unit: '袋',
         price: 4.50
     }
@@ -53,6 +54,11 @@ class Itemview extends Component{
                 </div>
             )
         }
+        ItemElement.push(
+            <div>
+                <ShoppingIcon />
+            </div>
+        )
         return (
             <div>{ItemElement}</div>
         )

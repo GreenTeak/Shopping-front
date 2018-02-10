@@ -3,11 +3,12 @@ import './AddtoShoppingCart.css'
 
 class AddtoShoppingCart extends Component {
     handleClickOnAddtoShop (e) {
-        console.log(this)
+
     }
-    render() {
+    render(){
         return (
-            <div className="ShoppingCartIcon">
+            <div className="ShoppingCart">
+                购买数量：<input type="text" onClick={this.handletoCalNum.bind(this)}></input>
                 <button onClick={this.handleClickOnAddtoShop.bind(this)}>加入购物车</button>
             </div>
         );
