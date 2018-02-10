@@ -6,8 +6,9 @@ body {
 .shoppingitem{
    margin: 15px auto;
    padding:15px;
-   width:1000px;
+   width:300px;
    font-size: large;
    border:1px solid #CCC;
    text-align: left;
+   display: inline-block;
 }

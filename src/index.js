@@ -1,6 +1,7 @@
 import React,{Component}from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
+import AddtoShoppingCart from './AddtoShoppingCart.js'
 const items=[
     {
         barcode: 'ITEM000000',
@@ -39,14 +40,16 @@ const items=[
         price: 4.50
     }
 ]
-class Index extends Component{
+class Itemview extends Component{
     render() {
         const ItemElement = []
         for (let item of items) {
             ItemElement.push(
                 <div className="shoppingitem" >
                     <div>{item.name}</div>
-                    <div>{item.price}元/{item.unit}</div>
+                    <div>{item.price}元/{item.unit}
+                        <span><AddtoShoppingCart /></span>
+                    </div>
                 </div>
             )
         }
@@ -56,7 +59,7 @@ class Index extends Component{
     }
 }
 ReactDOM.render(
-    <Index />,
+    <Itemview />,
     document.getElementById('root')
 )
 
