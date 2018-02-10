@@ -1,7 +1,8 @@
 import React,{Component}from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-const items=[
+
+ items=[
     {
         barcode: 'ITEM000000',
         name: '可⼝可乐',
@@ -51,27 +52,6 @@ class ItemView extends Component {
         )
     }
 }
-class Index extends Component{
-    render() {
-        const ItemElement = []
-        for (let item of items) {
-            ItemElement.push(
-                <div>
-                    <div>{item.name}</div>
-                    <div>{item.unit}</div>
-                    <div>{item.price}</div>
-                </div>
-            )
-        }
-        return (
-            <div>{ItemElement}</div>
-        )
-    }
-}
-ReactDOM.render(
-    <Index />,
-    document.getElementById('root')
-)
 
-
-
+export default ItemView;
+export default items;
