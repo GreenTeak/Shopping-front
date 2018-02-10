@@ -20,8 +20,7 @@ class App extends Component {
   }
 }
 ReactDOM.render(
-    React.createElement(App, null),
+    <Index />,
     document.getElementById('root')
 )
-
 export default App;
