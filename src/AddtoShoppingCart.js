@@ -8,8 +8,8 @@ class AddtoShoppingCart extends Component {
     render(){
         return (
             <div className="ShoppingCart">
-                购买数量：<input type="text" onClick={this.handletoCalNum.bind(this)}></input>
-                <button onClick={this.handleClickOnAddtoShop.bind(this)}>加入购物车</button>
+                购买数量：<input type="text" ref="buynum"></input>
+                <button >加入购物车</button>
             </div>
         );
     }
