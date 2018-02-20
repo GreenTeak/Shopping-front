@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.shoppingitem{
+    margin: 15px auto;
+    padding:15px;
+    width:300px;
+    font-size: large;
+    border:1px solid #CCC;
+    text-align: left;
+    display: inline-block;
+}
+.ShoppingCartIcon {
+    width: 300px;
+    margin-left: auto;
+    margin-right: 2px;
+}
