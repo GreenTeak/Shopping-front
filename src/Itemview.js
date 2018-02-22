@@ -2,6 +2,7 @@ import React,{Component}from 'react'
 import ReactDOM from 'react-dom'
 import './Itemview.css'
 import AddtoShoppingCart from "./AddtoShoppingCart";
+import ShoppingIcon from "./ShoppingIcon"
 const items=[
     {
         barcode: 'ITEM000000',
@@ -41,6 +42,16 @@ const items=[
     }
 ]
 class Itemview extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {num: ''};
+        this.buttonChange=this.buttonChange.bind(this);
+    }
+    buttonChange(newstate) {
+        this.setState({num:newstate})
+        alert('A name was sub: ' + this.state.num);
+        //event.preventDefault();
+    }
     render() {
         const ItemElement = []
         for (let item of items) {
@@ -48,10 +59,13 @@ class Itemview extends Component{
                 <div className="shoppingitem" >
                     <div>{item.name}</div>
                     <div>{item.price}元/{item.unit}</div>
-                    <AddtoShoppingCart />
+                    <AddtoShoppingCart shopnum={this.buttonChange}/>
                 </div>
             )
         }
+        ItemElement.push(
+                <ShoppingIcon  shoptotalnum={this.state.num}/>
+        )
         return (
             <div>{ItemElement}</div>
         )
