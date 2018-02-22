@@ -7,7 +7,7 @@ class ShoppingIcon extends Component {
         this.state = {value: '0'};
     }
     componentWillReceiveProps(nextProps) {
-        var sets = parseInt(this.state.value) + parseInt(nextProps.props.shoptotalnum);
+        var sets = parseInt(this.state.value) + parseInt(nextProps.shoptotalnum);
         this.setState({value: sets.toString()});
     }
     render() {

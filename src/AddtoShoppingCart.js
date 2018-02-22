@@ -17,7 +17,7 @@ class AddtoShoppingCart extends Component {
     handleSubmit(event) {
         var newstate=this.state.value;
         this.props.shopnum(newstate);
-        alert('A name was submitted: ' + newstate);
+        //alert('A name was submitted: ' + newstate);
         event.preventDefault();
     }
     render(){

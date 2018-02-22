@@ -50,7 +50,7 @@ class Itemview extends Component{
     }
     buttonChange(newstate) {
             this.setState({num:newstate,check:true});
-            alert('A name was sub: ' + this.state.num);
+           // alert('A name was sub: ' + this.state.num);
         //event.preventDefault();
     }
     render() {
