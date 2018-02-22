@@ -44,12 +44,13 @@ const items=[
 class Itemview extends Component{
     constructor(props) {
         super(props);
-        this.state = {num: ''};
+        this.state = {num: '0',check:false};
+
         this.buttonChange=this.buttonChange.bind(this);
     }
     buttonChange(newstate) {
-        this.setState({num:newstate})
-        alert('A name was sub: ' + this.state.num);
+            this.setState({num:newstate,check:true});
+            alert('A name was sub: ' + this.state.num);
         //event.preventDefault();
     }
     render() {
@@ -64,7 +65,7 @@ class Itemview extends Component{
             )
         }
         ItemElement.push(
-                <ShoppingIcon  shoptotalnum={this.state.num}/>
+                <ShoppingIcon  shoptotalnum={this.state.num} />
         )
         return (
             <div>{ItemElement}</div>
