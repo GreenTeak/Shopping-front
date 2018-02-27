@@ -3,11 +3,51 @@ import ReactDOM from 'react-dom'
 import './Itemview.css'
 import AddtoShoppingCart from "./AddtoShoppingCart";
 import ShoppingIcon from "./ShoppingIcon"
+import ShoppingCart from './ShoppingCart.png'
+import { Router, Route,Link } from 'react-router-dom'
+const totalitems=[
+    {
+        barcode: 'ITEM000000',
+        name: '可口可乐',
+        unit: '瓶',
+        price: 3.00
+    },
+    {
+        barcode: 'ITEM000001',
+        name: '雪碧',
+        unit: '瓶',
+        price: 3.00
+    },
+    {
+        barcode: 'ITEM000002',
+        name: '苹果',
+        unit: '斤',
+        price: 5.50
+    },
+    {
+        barcode: 'ITEM000003',
+        name: '荔枝',
+        unit: '斤',
+        price: 15.00
+    },
+    {
+        barcode: 'ITEM000004',
+        name: '电池',
+        unit: '个',
+        price: 2.00
+    },
+    {
+        barcode: 'ITEM000005',
+        name: '方便面',
+        unit: '袋',
+        price: 4.50
+    }
+]
 
 class Itemview extends Component{
     constructor(props) {
         super(props);
-        this.state = {num: '0',item:this.props.items[0]};
+        this.state = {num: '0',item:totalitems[0]};
 
         this.buttonChange=this.buttonChange.bind(this);
         this.itemChange=this.itemChange.bind(this);
@@ -23,14 +63,14 @@ class Itemview extends Component{
     }
     render() {
         //const ItemElement =[]
-        const items=this.props.items;
-        const ItemElement=items.map((item)=>
+        const ItemElement=totalitems.map((item)=>
             <div className="shoppingitem" key={item.barcode} >
                 <div>{item.name}</div>
                 <div>{item.price}元/{item.unit}</div>
                 <AddtoShoppingCart  item={this.itemChange} shopnum={this.buttonChange}/>
             </div>
         )
+
         //for (let item of this.props.items) {
           //  ItemElement.push(
            //     <div className="shoppingitem" >
@@ -42,9 +82,15 @@ class Itemview extends Component{
        // }
         ItemElement.push(
                 <ShoppingIcon item={this.state.item} shoptotalnum={this.state.num} />
+
         )
         return (
-            <div>{ItemElement}</div>
+            <div>
+                {ItemElement}
+                <div className="linkto">
+                <Link to="/Account"><img src={ShoppingCart} /></Link>
+                </div>
+            </div>
         )
     }
 }
