@@ -4,21 +4,21 @@ import './AddtoShoppingCart.css'
 class AddtoShoppingCart extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {value: '',code:this.props.it};
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        this.setState({value: event.target.value,code:this.props.it});
     }
 
     handleSubmit(event) {
         var newstate=this.state.value;
-        var newitem=this.props.item;
         this.props.shopnum(newstate);
-        this.props.item(newitem);
+        var newitem=this.state.code;
+        this.props.shopitem(newitem);
         //alert('A name was submitted: ' + newstate);
         event.preventDefault();
     }
