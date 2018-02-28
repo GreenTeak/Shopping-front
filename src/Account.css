@@ -1,0 +1,15 @@
+.Account{
+    margin: 0 auto;
+    font-size:16px;
+    width:1000px;
+    padding:10px 50px;
+}
+.showitem{
+    font-size:20px;
+    border:1px solid #ccc;
+    margin:10px;
+}
+.button{
+    width:200px;
+    margin: 10px 200px 10px 800px;
+}

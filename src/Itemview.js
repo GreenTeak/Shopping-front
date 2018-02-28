@@ -53,18 +53,16 @@ class Itemview extends Component{
     }
     buttonChange(newstate) {
             this.setState({num:newstate});
-            alert("num:"+this.state.num);
     }
     itemChange(newitem){
         this.setState({item:newitem});
-        alert("item:"+this.state.item);
-
     }
     render() {
         totalitems.forEach((x)=>{
             if(x.barcode==this.state.item) {
                 x.num = this.state.num;
                 isShopItem.push(x);
+                alert("新加入购物车"+totalitems[0].barcode+" "+totalitems[0].num)
             }
         })
         var path = {
@@ -98,7 +96,6 @@ class Itemview extends Component{
                 {ItemElement}
                 <div className="linkto">
                 <Link  to={path}><img src={ShoppingCart} /></Link>
-                    hashHistory.push(path);
                 </div>
             </div>
         )
