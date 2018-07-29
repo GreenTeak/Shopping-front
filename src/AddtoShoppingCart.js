@@ -19,7 +19,6 @@ class AddtoShoppingCart extends Component {
         this.props.shopnum(newstate);
         var newitem=this.state.code;
         this.props.shopitem(newitem);
-        //alert('A name was submitted: ' + newstate);
         event.preventDefault();
     }
     render(){

@@ -62,7 +62,6 @@ class Itemview extends Component{
             if(x.barcode==this.state.item) {
                 x.num = this.state.num;
                 isShopItem.push(x);
-                alert("新加入购物车"+totalitems[0].barcode+" "+totalitems[0].num)
             }
         })
         var path = {
@@ -77,15 +76,6 @@ class Itemview extends Component{
             </div>
         )
 
-        //for (let item of this.props.items) {
-          //  ItemElement.push(
-           //     <div className="shoppingitem" >
-           //         <div>{item.name}</div>
-           //         <div>{item.price}元/{item.unit}</div>
-           //         <AddtoShoppingCart  shopnum={this.buttonChange}/>
-            //    </div>
-          // )
-       // }
         ItemElement.push(
                 <ShoppingIcon shoptotalnum={this.state.num} />
 
